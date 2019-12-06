@@ -8,46 +8,43 @@
 <script>
     /* eslint-disable no-console */
 
-import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+    import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
-import EssentialsPlugin from '@ckeditor/ckeditor5-essentials/src/essentials';
-import BoldPlugin from '@ckeditor/ckeditor5-basic-styles/src/bold';
-import ItalicPlugin from '@ckeditor/ckeditor5-basic-styles/src/italic';
-import LinkPlugin from '@ckeditor/ckeditor5-link/src/link';
-import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph';
-import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
-import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
-import Indent from '@ckeditor/ckeditor5-indent/src/indent';
-import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
-import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
-import Font from '@ckeditor/ckeditor5-font/src/font';
-import Heading from '@ckeditor/ckeditor5-heading/src/heading';
-import CodeLight from './js/codelight';
-
-import Image from '@ckeditor/ckeditor5-image/src/image';
-import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
-import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
-import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
-import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
-import EasyImage from './js/easyimage';
-
-// import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-
-import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
+    import EssentialsPlugin from '@ckeditor/ckeditor5-essentials/src/essentials';
+    import BoldPlugin from '@ckeditor/ckeditor5-basic-styles/src/bold';
+    import ItalicPlugin from '@ckeditor/ckeditor5-basic-styles/src/italic';
+    import LinkPlugin from '@ckeditor/ckeditor5-link/src/link';
+    import ParagraphPlugin from '@ckeditor/ckeditor5-paragraph/src/paragraph';
+    import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+    import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+    import Indent from '@ckeditor/ckeditor5-indent/src/indent';
+    import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
+    import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
+    import Font from '@ckeditor/ckeditor5-font/src/font';
+    import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
+    import Image from '@ckeditor/ckeditor5-image/src/image';
+    import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
+    import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
+    import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
+    import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
+    import EasyImage from './js/easyimage';
+    import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 
 
-import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
-import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
+    import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
+    import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
 
-import Table from '@ckeditor/ckeditor5-table/src/table';
-import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+    import Table from '@ckeditor/ckeditor5-table/src/table';
+    import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 
 
-import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
-import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
-import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
+    import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
+    import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
+    import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
 
-// import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice'
+    // import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
+
+    // import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice'
 
 export default {
     name: 'app',
@@ -70,8 +67,7 @@ export default {
                     IndentBlock,
                     HorizontalLine,
                     Font,
-                    Heading,
-                    CodeLight,
+                    CodeBlock,
                     EasyImage,
                     // CKFinder,
                     MediaEmbed,
@@ -84,9 +80,9 @@ export default {
 
                 toolbar: {
                     items: [
-                        'heading',
                         'bold',
                         'italic',
+                        'codeBlock',
                         'link',
                         'undo',
                         'redo',
@@ -147,6 +143,13 @@ export default {
                 },
                 table: {
                     contentToolbar: [ 'tableColumn', 'tableRow', 'mergeTableCells' ]
+                },
+                codeBlock: {
+                    languages: [
+                        { language: 'css', label: 'CSS' },
+                        { language: 'xml', label: 'HTML/XML' },
+                        { language: 'java', label: 'java' }
+                    ]
                 },
                 heading: {
                     options: [
