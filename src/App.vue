@@ -41,6 +41,8 @@
     import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
     import Autosave from '@ckeditor/ckeditor5-autosave/src/autosave';
     import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
+    import StandardEditingMode from '@ckeditor/ckeditor5-restricted-editing/src/standardeditingmode';
+    // import RestrictedEditingMode from '@ckeditor/ckeditor5-restricted-editing/src/restrictededitingmode';
 
     // import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 
@@ -75,7 +77,9 @@ export default {
                     // PasteFromOffice,
                     Autoformat,WordCount,Autosave,
                     TodoList,PageBreak,
-                    Table, TableToolbar
+                    Table, TableToolbar,
+                    StandardEditingMode,
+                    // RestrictedEditingMode
                 ],
 
                 toolbar: {
@@ -89,15 +93,16 @@ export default {
                         'highlight',
                         'codeLight',
                         'imageUpload',
-                        // 'ckfinder',
                         'mediaEmbed',
                         'todoList',
                         'insertTable',
-                        'removeFormat',
                         'pageBreak',
                         'outdent', 'indent',
                         'horizontalLine',
-                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor'
+                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',
+                        'removeFormat',
+                        'restrictedEditingException',
+                        // 'restrictedEditing'
                     ]
                 },
                 highlight: {
